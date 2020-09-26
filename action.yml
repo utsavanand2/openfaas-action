@@ -1,0 +1,16 @@
+name: 'OpenFaaS Actions'
+description: 'Setup Github Actions with faas-cli'
+author: 'Kumar Utsav Anand'
+branding:
+  icon: 'play'
+  color: 'gray-dark'
+inputs:
+  cli-args:
+    description: 'Arguments passed to faas-cli'
+    default: 'faas-cli version'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+      - "${{ inputs.cli-args }}"
